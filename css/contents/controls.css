@@ -1,0 +1,140 @@
+.music-player {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: #88888860;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .player-content {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between image, song info */
+    margin-bottom: 10px; /* Space between content and buttons */
+  }
+  
+  .album-art {
+    flex-shrink: 0;
+    margin-right: 10px; /* Space between image and song info */
+  }
+  
+  .album-art img {
+    width: 80px; /* Small image */
+    height: 80px;
+    border-radius: 5px;
+  }
+  
+  .song-info {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .song-title {
+    margin: 0;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Ellipsis for long titles */
+    font-size: 14px; /* Smaller font size */
+  }
+  
+  .artist {
+    margin: 3px 0 0; /* Space between title and artist */
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Ellipsis for long artist names */
+  }
+  
+  .player-controls {
+    display: flex;
+    justify-content: center; /* Center controls horizontally */
+    margin-bottom: 10px; /* Space between controls and progress bar */
+  }
+  
+  .player-controls button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px; /* Margin between buttons */
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    border-radius: 5px;
+  }
+  
+  .progress {
+    height: 100%;
+    background: #111;
+    width: 0%;
+    border-radius: 5px;
+  }
+
+.time-details{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: absolute;
+  margin-left: 26.7rem;
+  margin-top: 3rem;
+  font-size: smaller;
+  color: #fff;
+}
+
+ /* .time-count, .time-duration{
+    justify-self: flex-start;
+    align-self: self-start;
+    text-align: start;
+  }
+   */
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .music-player {
+      padding: 5px;
+    }
+  
+    .album-art img {
+      margin-top: 10px;
+      margin-left: 5px;
+      width: 40px;
+      height: 40px;
+    }
+  
+    .player-controls {
+      flex-direction: row; /* Keep buttons horizontally aligned */
+      gap: 10px;
+      align-items: center; /* Align buttons to the center */
+    }
+  
+    .player-controls button {
+      padding: 4px 8px;
+      margin: 5px; /* Space between buttons */
+    }
+  
+    .song-title {
+      font-size: 12px; /* Smaller font size for smaller screens */
+      color: #111;
+    }
+  
+    .artist {
+      font-size: 10px; /* Smaller font size for smaller screens */
+      color: #111;
+    }
+  }
+  

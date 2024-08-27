@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/contents/album.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/play.css">
+    <link rel="stylesheet" href="css/contents/controls.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" id="menu-toggle">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="#" onclick="homePage()">Home</a></li>
+                <li><a href="#" onclick="albumsPage()">Albums</a></li>
+                <li><a href="#" onclick="playlistPage()">Favorite</a></li>
+                <li><a href="#" onclick="profilePage()">Profile</a></li>
+            </ul>
+            <h1 class="logo">NIKI</h1>
+        </div>
+    </nav>
+
+    <main>
+        <div class="home home-page"></div>
+        <div class="main">
+          <hgroup>
+            <h1 id="main-header">NIKI Zefanya</h1>
+            <h2 id="sub-header">Artist</h2>
+          </hgroup>
+        </div>
+        
+        <div class="album-container">
+            <div class="album-list">
+                <img onclick="buzzList()" src="img/album-cover/09b8b308f780c6aeb61644b5a14b025a.1000x1000x1.png" alt="">
+                <p>Buzz</p>
+            </div>
+            <div class="album-list">
+                <img onclick="liveList()" src="img/album-cover/ab67616d0000b2736b2da09f115df7ca7697008a.jfif" alt="">
+                <p>Live at the Wiltern</p>
+            </div>
+            <div class="album-list">
+                <img onclick="nicoleList()" src="img/album-cover/Nicole_(Album)_cover.png" alt="">
+                <p>Nicole</p>
+            </div>
+            <div class="album-list">
+                <img onclick="moonChildList()" src="img/album-cover/ab67616d0000b2735c3533d5e7cdda8c3c70f5f6.jfif" alt="">
+                <p>MOONCHILD</p>
+            </div>
+            <div class="album-list"> 
+                <img onclick="zephyrList()" src="img/album-cover/ab67616d0000b273874d4f55577035829c73dc66.jfif" alt="">
+                <p>Zephyr</p>
+            </div>
+        </div>
+
+        <div class="allSongs">
+
+        </div>
+        
+        <div class="row">
+          <figure>
+            <figcaption></figcaption>
+          </figure>
+        </div>
+
+        <div class="row2">
+          <figure>
+            <figcaption></figcaption>
+          </figure>
+        </div>
+
+        <div class="row3">
+          <figure>
+            <figcaption></figcaption>
+          </figure>
+        </div>
+
+        <div class="row4">
+          <figure>
+            <figcaption></figcaption>
+          </figure>
+        </div>
+
+        <div class="row5">
+          <figure>
+            <figcaption></figcaption>
+          </figure>
+        </div>
+        
+        <div class="playlist">
+
+          </div>
+
+          <div class="music-player" id="music-player">
+            <div class="player-content">
+              <div class="album-art">
+                <img src="" alt="Album Art" id="album-art-img">
+              </div>
+              <div class="song-info">
+                <h2 class="song-title" id="song-title"></h2>
+                <p class="artist" id="artist-name"></p>
+              </div>
+              <div class="player-controls">
+                <button class="prev-btn" id="prev-song"><i class="fas fa-backward"></i></button>
+                <button class="play-btn" id="play-pause"><i class="fas fa-play"></i></button>
+                <button class="next-btn" id="next-song"><i class="fas fa-forward"></i></button>
+                <button class="repeat-btn" id="repeat"><i class="fas fa-redo"></i></button>
+                <button class="shuffle-btn" id="shuffle"><i class="fas fa-random"></i></button>
+                <button class="fav-btn" id="favorite"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <div class="time-details">
+
+              </div>
+            </div>
+            <div class="progress-bar">
+              <div class="progress" id="progress"></div>
+            </div>
+        </div>
+        
+    </main>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/content/pages.js"></script>
+</body>
+</html>

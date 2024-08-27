@@ -1,0 +1,85 @@
+.music-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.album-art img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.controls {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.song-info {
+    margin: 20px 0;
+}
+
+.song-title {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.artist {
+    color: #666;
+    margin: 5px 0 0 0;
+}
+
+.player-controls button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    height: 5px;
+    background: #ddd;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.progress {
+    height: 100%;
+    background: #111;
+    width: 0%;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .music-player {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .album-art img {
+        max-width: 200px;
+    }
+
+    .controls {
+        max-width: 200px;
+    }
+
+    .song-title {
+        font-size: 1.2em;
+    }
+
+    .player-controls button {
+        padding: 8px 16px;
+    }
+}

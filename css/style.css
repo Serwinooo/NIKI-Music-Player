@@ -1,0 +1,330 @@
+  *, *:before, *:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body{
+    background: #241b50;
+    /* background: url('https://images.genius.com/09b8b308f780c6aeb61644b5a14b025a.1000x1000x1.png'); */
+    background-repeat: none;
+    object-fit: fill;
+    display: flex;
+  }
+
+  /* For Firefox */
+html {
+  scrollbar-width: thin; /* Makes the scrollbar thin */
+  scrollbar-color: #888 #f1f1f1; /* Color of the scrollbar thumb and track */
+}
+
+/* For WebKit browsers */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Background color of the scrollbar thumb */
+    border-radius: 4px; /* Rounded corners of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker color when hovering over the scrollbar thumb */
+}
+  
+  main {
+    padding: 20px 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Clearfix for .row */
+.row, .row2, .row3, .row4, .row5 {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0; 
+  cursor: pointer;
+}
+
+.row figure, .row2 figure, .row3 figure, .row4 figure, .row5 figure {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  gap: 10px;
+  margin: 0;
+  margin-top: 1rem;
+  padding: 0; 
+  background: #ffffff8a;
+  border-radius: 5px;
+}
+
+/* Style the image to fit within the figure */
+.row figure img, .row2 figure img, .row3 figure img, .row4 figure img, .row5 figure img {
+  width: 60px; 
+  height: 60px; 
+  object-fit: cover; 
+  border-radius: 4px; 
+}
+
+.row figcaption, .row2 figcaption, .row3 figcaption, .row4 figcaption, .row5 figcaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.row h4, .row2 h4, .row3 h4, .row4 h4, .row5 h4 {
+  font-size: 14px; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.row p, .row2 p, .row3 p, .row4 p, .row5 p {
+  font-size: 12px; 
+  margin: 2px 0; 
+  color: #111; 
+}
+
+.playlist {
+  display: none;
+  flex-direction: column;
+  gap: 10px; 
+  /* margin: 20px; */
+  align-items: center;
+  width: 100%;
+  margin-top: .5rem;
+}
+
+/* Playlist Item */
+.playlist-item {
+  display: flex;
+  align-items: center;
+  /* padding: 10px; */
+  border-radius: 8px;
+  background: #ffffff8a;
+  color: #111;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  cursor: pointer;
+}
+
+/* Cover Image */
+.playlist-cover {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  margin-right: 15px;
+  object-fit: cover; 
+}
+
+/* Song Details */
+.song-details {
+  flex: 1;
+}
+
+.song-details h4 {
+  margin: 0;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.song-details p {
+  margin: 0;
+  color: #666;
+}
+
+.song-details span {
+  display: block;
+  color: #999;
+  font-size: 0.9em;
+}
+
+/* Remove Button */
+.playlist-item button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  font-size: 1.2em;
+  margin-left: 15px;
+}
+
+.playlist-item button:hover {
+  color: red;
+}
+
+/* Headings */
+h1 {
+  font-weight: normal;
+  font-size: 3em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  color: #888;
+  font-size: 2em;
+  margin-top: 0;
+}
+
+  .main{
+    margin-top: 5rem;
+  }
+
+.album-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.album-container div {
+  width: 200px; /* Set a fixed width */
+  height: 200px; /* Set a fixed height */
+  overflow: hidden; /* Hide overflow to maintain aspect ratio */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.album-container img {
+  width: 90%;
+  height: 90%;
+  cursor: pointer;
+  object-fit: cover; 
+}
+
+.album-container img:hover{
+  opacity: 70%;
+}
+
+.album-list{
+  position: relative;
+}
+
+.album-list p{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%);
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  font-family :Quicksand, sans-serif;
+  }
+
+.album-list:nth-child(2) p{
+    top: 45%;
+    font-size: 1.5em;
+    }
+
+    .album-list:nth-child(4) p{
+      top: 75%;
+      font-size: 1.5em;
+      }
+
+      @media (max-width: 700px) {
+        .album-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr); 
+          gap: 10px;
+        }
+      
+        .album-container div {
+          width: 100%; 
+          height: auto; 
+        }
+      
+        .album-container img {
+          width: 100%;
+          height: auto; 
+        }
+        .album-list:nth-child(2) p{
+          top: 70%;
+          font-size: 2em;
+          }
+
+        .playlist-item{
+          width: 360px;
+          height: 70px;
+        }
+          /* .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 10px;
+            align-items: center;
+          }
+        
+          figure {
+            display: contents; 
+          }
+        
+          figure img {
+            margin-top: 20px;
+            width: 100%;
+            height: auto;
+          }
+        
+          figcaption {
+            text-align: left; 
+          }
+
+          .row figure, .row2 figure, .row3 figure, .row4 figure, .row5 figure {
+            
+   
+          } */
+      }
+
+.img-list{
+  width: 100%;
+  height: 100px;
+  cursor: pointer;
+  object-fit: cover; 
+}
+
+.playlist-img {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+
+.song-info {
+  flex-grow: 1;
+}
+
+.playlist-title {
+  font-weight: bold;
+}
+
+.playlist-artist, .playlist-duration {
+  font-size: 0.9em;
+  color: #111;
+}
+
+.playlist i{
+  padding-right: 1rem;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.fa-heart:hover{
+  color: black;
+}

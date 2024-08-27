@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: black;
+        }
+    </style>
+    
+    </head>
+    
+    <body>
+      <h1 id='clockTest'></h1>
+      <h2 id="dateTest"></h2>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+
+$(function(){
+    setInterval(digitalClock, 1000);
+});
+
+    function digitalClock(){
+    let date = new Date();
+    let localDate = date.toLocaleDateString();
+    let h = date.getHours();
+    let m = date.getMinutes();
+    let s = date.getSeconds();
+    let clock = document.getElementById('clockTest');
+    let calendar = document.getElementById('dateTest');
+    let output = h + ':' + m + ':' + s;
+    clock.innerHTML = output;
+    calendar.innerHTML = localDate;
+    console.log(output);
+    }
+    digitalClock();
+
+      </script>
+    </body>
+    
+</html>
