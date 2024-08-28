@@ -5,8 +5,8 @@
   }
 
   body{
-    background: #241b50;
-    /* background: url('https://images.genius.com/09b8b308f780c6aeb61644b5a14b025a.1000x1000x1.png'); */
+    background: rgb(2,0,50);
+    background: linear-gradient(108deg, rgba(2,0,50,1) 0%, rgba(75,58,136,1) 87%, rgba(72,56,131,1) 100%);
     background-repeat: none;
     object-fit: fill;
     display: flex;
@@ -14,26 +14,26 @@
 
   /* For Firefox */
 html {
-  scrollbar-width: thin; /* Makes the scrollbar thin */
-  scrollbar-color: #888 #f1f1f1; /* Color of the scrollbar thumb and track */
+  scrollbar-width: thin; 
+  scrollbar-color: #888 #f1f1f1; 
 }
 
 /* For WebKit browsers */
 ::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
+    width: 8px; 
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Background color of the scrollbar track */
+    background: #f1f1f1; 
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888; /* Background color of the scrollbar thumb */
-    border-radius: 4px; /* Rounded corners of the scrollbar thumb */
+    background: #888; 
+    border-radius: 4px; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Darker color when hovering over the scrollbar thumb */
+    background: #555; 
 }
   
   main {
@@ -53,6 +53,7 @@ html {
   gap: 10px;
   margin: 20px 0; 
   cursor: pointer;
+  width: 360px;
 }
 
 .row figure, .row2 figure, .row3 figure, .row4 figure, .row5 figure {
@@ -190,9 +191,9 @@ h2 {
 }
 
 .album-container div {
-  width: 200px; /* Set a fixed width */
-  height: 200px; /* Set a fixed height */
-  overflow: hidden; /* Hide overflow to maintain aspect ratio */
+  width: 200px; 
+  height: 200px; 
+  overflow: hidden; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -259,33 +260,8 @@ h2 {
 
         .playlist-item{
           width: 360px;
-          height: 70px;
+          height: 60px;
         }
-          /* .row {
-            display: grid;
-            grid-template-columns: 1fr 1fr; 
-            gap: 10px;
-            align-items: center;
-          }
-        
-          figure {
-            display: contents; 
-          }
-        
-          figure img {
-            margin-top: 20px;
-            width: 100%;
-            height: auto;
-          }
-        
-          figcaption {
-            text-align: left; 
-          }
-
-          .row figure, .row2 figure, .row3 figure, .row4 figure, .row5 figure {
-            
-   
-          } */
       }
 
 .img-list{

@@ -5,6 +5,7 @@
   /* gap: 10px; */
   cursor: pointer;
   width: 600px;
+  background-repeat: none;
 }
 
 .allSongs figure {

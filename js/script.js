@@ -41,7 +41,6 @@ fetch('../data.json')
         return;
       }
     
-      // Stop the currently playing song
       if (currentSong) {
         currentSong.pause();
         currentSong.currentTime = 0; // Reset timer to 0
@@ -61,16 +60,15 @@ fetch('../data.json')
       artistName.textContent = data.media[index].artist;
       albumArtImg.src = data.media[index].cover;
     
-      updateFavBtn(); // Update favorite button state when a new song plays
+      updateFavBtn(); 
     
-      // Add event listener here to avoid null reference
       currentSong.addEventListener('timeupdate', () => {
         const progressPercentage = (currentSong.currentTime / currentSong.duration) * 100;
         progress.style.width = `${progressPercentage}%`;
       });
     
       function songDuration() {
-        // Clear any existing timeCount and timeDuration elements
+
         const existingTimeCount = document.querySelector('.time-count');
         const existingTimeDuration = document.querySelector('.time-duration');
         
@@ -117,8 +115,7 @@ fetch('../data.json')
             console.log(timeCount);
           }
         };
-      
-        // Update timeCount every second
+
         setInterval(updateTimeCount, 1000);
       }
       
@@ -163,7 +160,6 @@ fetch('../data.json')
     row5.innerHTML = '';
     allSongs.innerHTML = '';
     
-    // Display songs in the respective rows based on the album name
     data.media.forEach((song, index) => {
       switch(song.album) {
         case 'Buzz':
@@ -184,12 +180,10 @@ fetch('../data.json')
       }
     });
     
-    // Display all songs in the .allSongs div
     data.media.forEach((song, index) => {
       createSongElement(song, index, allSongs);
     });
-    
-    // Function to create and append song elements
+
     function createSongElement(song, index, container) {
       const figure = document.createElement('figure');
       const figcap = document.createElement('figcaption');
@@ -197,7 +191,6 @@ fetch('../data.json')
       const audio = new Audio(song.path);
       songs.push(audio);
     
-      // Set up event listener to calculate duration after loading metadata
       audio.addEventListener('loadedmetadata', () => {
         const duration = Math.floor(audio.duration);
         const minutes = Math.floor(duration / 60);
@@ -221,7 +214,6 @@ fetch('../data.json')
       const title = document.createElement('h4');
       title.textContent = song.title;
     
-      // Append elements to the figure
       figure.appendChild(img);
       figure.appendChild(figcap);
     
@@ -235,7 +227,6 @@ fetch('../data.json')
         musicPlayer.style.display = 'flex';
       });
     
-      // Append figure to the specified container
       container.appendChild(figure);
     }
 
@@ -279,16 +270,25 @@ fetch('../data.json')
       removeBtn.innerHTML = '<i class="fas fa-heart"></i>';
       removeBtn.style.color = 'green';
       removeBtn.classList.add('remove-btn');
-      removeBtn.addEventListener('click', () => {
-        removeFromPlaylist(index);
+      
+      // Stop propagation to prevent the playlist item click event from firing
+      removeBtn.addEventListener('click', (event) => {
+          event.stopPropagation(); // Prevent triggering the playlist item click event
+          removeFromPlaylist(index);
+          // Reset the heart icon color to default
+          if (wishlist.includes(index)) {
+              favBtn.innerHTML = '<i class="fa-regular fa-heart"></i>';
+              favBtn.style.color = ''; // Reset color to default
+          }
       });
-    
-      // Append elements to the song info container
+      
+      playlistItem.appendChild(removeBtn);
+      
+      
       songInfo.appendChild(title);
       songInfo.appendChild(artist);
       songInfo.appendChild(duration);
-    
-      // Append all elements to the playlist item
+
       playlistItem.appendChild(img);
       playlistItem.appendChild(songInfo);
       playlistItem.appendChild(removeBtn);
@@ -302,19 +302,29 @@ fetch('../data.json')
         playSong(index);
         musicPlayer.style.display = 'flex';
       });
-    
-      // Append the playlist item to the playlist container
+
       playlist.appendChild(playlistItem);
     };
     
-    
-
     const removeFromPlaylist = (index) => {
       const playlistItem = playlist.querySelector(`[data-index="${index}"]`);
       if (playlistItem) {
-        playlistItem.remove();
+          playlistItem.remove();
       }
-    };
+  
+      // Remove from wishlist if the song is being removed from the playlist
+      const wishlistIndex = wishlist.indexOf(index);
+      if (wishlistIndex !== -1) {
+          wishlist.splice(wishlistIndex, 1);
+          // Reset the favorite button if the removed song was the current song
+          if (currentSongIndex === index) {
+              favBtn.innerHTML = '<i class="fa-regular fa-heart"></i>';
+              favBtn.style.color = ''; // Reset color to default
+          }
+      }
+  };
+  
+    
 
     const formatDuration = (duration) => {
       const minutes = Math.floor(duration / 60);

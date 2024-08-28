@@ -55,6 +55,7 @@ const buzzList = () => {
 
     albumBuzz.style.display = 'block';
     bodybg.style.backgroundImage = 'url("https://images.genius.com/09b8b308f780c6aeb61644b5a14b025a.1000x1000x1.png")';
+    bodybg.style.backgroundRepeat = 'none';
 }
 
 const liveList = () => {
